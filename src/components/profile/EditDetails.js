@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { editUserDetails } from "../redux/actions/userActions";
-import MyButton from "../util/MyButton";
+import { editUserDetails } from "../../redux/actions/userActions";
+import MyButton from "../../util/MyButton";
 //MUI stuff
 import withStyles from "@material-ui/core/styles/withStyles";
 import {
@@ -61,7 +61,8 @@ class EditDetails extends Component {
     });
   };
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     const userDetails = {
       bio: this.state.bio,
       location: this.state.location,

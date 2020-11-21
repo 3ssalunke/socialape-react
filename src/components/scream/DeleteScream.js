@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
 //MUI stuff
 import {
   Button,
@@ -12,7 +12,7 @@ import {
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 //redux
 import { connect } from "react-redux";
-import { deleteScream } from "../redux/actions/dataActions";
+import { deleteScream } from "../../redux/actions/dataActions";
 
 const styles = {
   deleteButton: {

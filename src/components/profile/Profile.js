@@ -2,7 +2,8 @@
 import React, { Component } from "react";
 import dayjs from "dayjs";
 import EditDetails from "./EditDetails";
-import MyButton from "../util/MyButton";
+import MyButton from "../../util/MyButton";
+import ProfileSkelton from "../../util/ProfileSkelton";
 //MUI stuff
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Button, Paper, Typography } from "@material-ui/core";
@@ -16,7 +17,7 @@ import KeyboardReturnIcon from "@material-ui/icons/KeyboardReturn";
 //redux
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { logoutUser, uploadImage } from "../redux/actions/userActions";
+import { logoutUser, uploadImage } from "../../redux/actions/userActions";
 
 const styles = {
   paper: {
@@ -116,7 +117,7 @@ class Profile extends Component {
             <div className="profile-details">
               <MuiLink
                 component={Link}
-                to={`/users/${handle}`}
+                to={`/user/${handle}`}
                 color="primary"
                 variant="h5"
               >
@@ -176,7 +177,7 @@ class Profile extends Component {
         </Paper>
       )
     ) : (
-      <p>Loading...</p>
+      <ProfileSkelton />
     );
   }
 }

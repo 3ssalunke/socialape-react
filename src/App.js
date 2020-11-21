@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from "axios";
 import "./App.css";
 //MUI stuff
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
@@ -12,13 +13,13 @@ import store from "./redux/store";
 import { SET_AUTHENTICATED } from "./redux/types";
 import { getUserData, logoutUser } from "./redux/actions/userActions";
 //components
-import Navbar from "./components/Navbar";
+import Navbar from "./components/layout/Navbar";
 import AuthRoute from "./util/AuthRoute";
 //pages
 import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
-import axios from "axios";
+import user from "./pages/user";
 
 const theme = createMuiTheme(themeFile);
 
@@ -45,6 +46,12 @@ function App() {
               <Route exact path="/" component={home} />
               <AuthRoute exact path="/login" component={login} />
               <AuthRoute exact path="/signup" component={signup} />
+              <Route exact path="/user/:handle" component={user} />
+              <Route
+                exact
+                path="/user/:handle/scream/:screamId"
+                component={user}
+              />
             </Switch>
           </div>
         </Router>
